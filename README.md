@@ -1,4 +1,14 @@
-# bun-docker-exercise
+# An exercise with Bun, Express.js and Docker
+
+I am using Bun v1.1.0, Express.js and Docker to build this simple web API.
+
+## To clone:
+
+Use the following command:
+```bash
+git clone
+cd bun-docker-exercise
+```
 
 To install dependencies:
 
@@ -6,10 +16,25 @@ To install dependencies:
 bun install
 ```
 
-To run:
+To run as development profile (reload upon file changes):
 
 ```bash
-bun run index.ts
+bun run dev
 ```
 
-This project was created using `bun init` in bun v1.0.35. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+## To build the docker image
+
+```bash
+docker build --pull -t bun-express .
+```
+Note: . at the end of the command is required
+
+## To Run
+```bash
+docker run -d -p 3000:3000 bun-express
+```
+
+## To Stop Docker runnin
+```bash
+docker stop <<docker-id>>
+```

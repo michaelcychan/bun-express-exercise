@@ -13,7 +13,7 @@
     "express": "^4.19.2"
   },
   "scripts": {
-    "server": "bun run index.ts",
+    "server": "bun --version && bun run index.ts",
     "dev": "bun --hot run index.ts"
   }
 }
