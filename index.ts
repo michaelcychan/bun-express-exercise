@@ -1,14 +1,12 @@
 import express from "express";
+import {hello} from './src/hello'
 
 const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  // send a simple json response
-  console.log(req.query)
-
-  const name = req.query?.name || "World";
-  res.json({ message: `Hello ${name}!` });
+  const message = hello(req.query as Record<string, string>)
+  res.json({ message});
 });
 
 app.listen(port, () => {
